@@ -41,6 +41,15 @@ const projects = [
     gradient: "from-blue-900 via-indigo-900 to-violet-900",
     icon: "🏥",
   },
+  {
+    title: "Sistema Librería",
+    url: "https://sistemalibreria.infinityfreeapp.com/",
+    description: "Sistema de gestión para librería con control de inventario y ventas.",
+    tags: ["PHP", "MySQL", "Bootstrap"],
+    gradient: "from-amber-900 via-yellow-900 to-orange-900",
+    icon: "📚",
+    credentials: { user: "usuario1@yahoo.es", password: "usuario12345:)" },
+  },
 ];
 
 const technologies = [
@@ -158,7 +167,7 @@ function Hero() {
   return (
     <section
       className="relative w-full flex flex-col items-center justify-center text-center px-6"
-      style={{ minHeight: "100vh", background: "linear-gradient(180deg, #0a0a0f 0%, #12121a 60%, #1a1a2e 100%)" }}
+      style={{ minHeight: "100vh", background: "linear-gradient(180deg, #ffffff 0%, #f5f5f5 60%, #eef2ff 100%)" }}
     >
       <Particles />
       {/* Top nav bar */}
@@ -172,9 +181,9 @@ function Hero() {
               key={item}
               href={`#${item === "Inicio" ? "hero" : item === "Sobre mí" ? "about" : item === "Proyectos" ? "projects" : "tech"}`}
               className="text-sm tracking-widest uppercase transition-all duration-300"
-              style={{ color: "#aaa", fontFamily: "'Segoe UI', sans-serif" }}
+              style={{ color: "#555", fontFamily: "'Segoe UI', sans-serif" }}
               onMouseEnter={(e) => (e.target.style.color = "#e57b00")}
-              onMouseLeave={(e) => (e.target.style.color = "#aaa")}
+              onMouseLeave={(e) => (e.target.style.color = "#555")}
             >
               {item}
             </a>
@@ -189,7 +198,7 @@ function Hero() {
         </p>
         <h1 className="text-6xl font-bold leading-tight mb-2" 
             style={{ 
-              color: "#ffffff", 
+              color: "#111111", 
               fontFamily: "'Segoe UI', sans-serif", 
               textShadow: "0 0 60px rgba(229,123,0,0.15)" 
             }}
@@ -200,7 +209,7 @@ function Hero() {
         <h2 className="text-5xl font-bold mb-6" style={{ background: "linear-gradient(135deg, #e57b00, #ff9f1c, #ffbf69)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", fontFamily: "'Segoe UI', sans-serif" }}>
           Full Stack Developer
         </h2>
-        <p className="text-base leading-relaxed mb-8" style={{ color: "#888", maxWidth: "600px", margin: "0 auto 2rem", fontFamily: "'Segoe UI', sans-serif" }}>
+        <p className="text-base leading-relaxed mb-8" style={{ color: "#555", maxWidth: "600px", margin: "0 auto 2rem", fontFamily: "'Segoe UI', sans-serif" }}>
           Diseño y desarrollo aplicaciones modernas, escalables y centradas en el usuario. Especializado en soluciones digitales con tecnologías de vanguardia.
         </p>
         <div className="flex justify-center gap-4 flex-wrap">
@@ -240,12 +249,12 @@ function About() {
     <section
       id="about"
       className="relative w-full px-6 py-24"
-      style={{ background: "linear-gradient(180deg, #12121a 0%, #0f0f18 100%)" }}
+      style={{ background: "linear-gradient(180deg, #ffffff 0%, #f9f9f9 100%)" }}
     >
       <div className="max-w-5xl mx-auto">
         <div className="flex flex-col items-start mb-12">
           <p className="text-xs tracking-widest uppercase mb-3" style={{ color: "#e57b00", fontFamily: "'Segoe UI', sans-serif" }}>Conóceme</p>
-          <h2 className="text-4xl font-bold mb-3" style={{ color: "#fff", fontFamily: "'Segoe UI', sans-serif" }}>Sobre Mí</h2>
+          <h2 className="text-4xl font-bold mb-3" style={{ color: "#111", fontFamily: "'Segoe UI', sans-serif" }}>Sobre Mí</h2>
           <GlowLine />
         </div>
 
@@ -254,7 +263,7 @@ function About() {
           <div className="flex-shrink-0">
             <div
               className="w-56 h-56 rounded-lg flex items-center justify-center relative overflow-hidden"
-              style={{ background: "linear-gradient(135deg, #1a1a2e, #16213e)", border: "1px solid rgba(229,123,0,0.3)" }}
+              style={{ background: "linear-gradient(135deg, #f0f0f0, #e8e8e8)", border: "1px solid rgba(229,123,0,0.3)" }}
             >
               <div className="text-7xl">👨‍💻</div>
               <div className="absolute inset-0 rounded-lg" style={{ boxShadow: "inset 0 0 60px rgba(229,123,0,0.08)" }} />
@@ -267,7 +276,7 @@ function About() {
                 { label: "Años", value: "2+" },
                 { label: "Clientes", value: "3+" },
               ].map((s) => (
-                <div key={s.label} className="rounded-lg p-3 text-center" style={{ background: "rgba(229,123,0,0.06)", border: "1px solid rgba(229,123,0,0.12)" }}>
+                <div key={s.label} className="rounded-lg p-3 text-center" style={{ background: "rgba(229,123,0,0.06)", border: "1px solid rgba(229,123,0,0.2)" }}>
                   <p className="text-xl font-bold" style={{ color: "#e57b00" }}>{s.value}</p>
                   <p className="text-xs" style={{ color: "#666" }}>{s.label}</p>
                 </div>
@@ -277,13 +286,13 @@ function About() {
 
           {/* Bio text */}
           <div className="flex-1">
-            <p className="text-base leading-relaxed mb-5" style={{ color: "#999", fontFamily: "'Segoe UI', sans-serif", lineHeight: "1.9" }}>
+            <p className="text-base leading-relaxed mb-5" style={{ color: "#444", fontFamily: "'Segoe UI', sans-serif", lineHeight: "1.9" }}>
               Ingeniero en Software titulado por la <span style={{ color: "#e57b00" }}>Escuela Superior Politécnica de Chimborazo</span>, con sólida formación y experiencia práctica en el diseño, desarrollo e implementación de aplicaciones y sistemas de información, bajo metodologías ágiles.
             </p>
-            <p className="text-base leading-relaxed mb-5" style={{ color: "#999", fontFamily: "'Segoe UI', sans-serif", lineHeight: "1.9" }}>
-              Cuento con un enfoque <span style={{ color: "#e57b00" }}>Full Stack</span> y conocimientos en diseño UI/UX, orientados a crear soluciones digitales funcionales, escalables y centradas en el usuario. Poseo experiencia en el desarrollo y gestión de bases de datos, utilizando tecnologías como PostgreSQL y MySQL, así como herramientas para análisis y visualización de datos como Power BI.
+            <p className="text-base leading-relaxed mb-5" style={{ color: "#444", fontFamily: "'Segoe UI', sans-serif", lineHeight: "1.9" }}>
+              Cuento con un enfoque <span style={{ color: "#e57b00" }}>Full Stack</span> y conocimientos, orientados a crear soluciones digitales funcionales, escalables y centradas en el usuario. Poseo experiencia en el desarrollo y gestión de bases de datos, utilizando tecnologías como PostgreSQL y MySQL, así como herramientas para análisis y visualización de datos como Power BI.
             </p>
-            <p className="text-base leading-relaxed" style={{ color: "#999", fontFamily: "'Segoe UI', sans-serif", lineHeight: "1.9" }}>
+            <p className="text-base leading-relaxed" style={{ color: "#444", fontFamily: "'Segoe UI', sans-serif", lineHeight: "1.9" }}>
               Trabajo con frameworks y tecnologías modernas como <span style={{ color: "#e57b00" }}>Laravel, PHP, React y TailwindCSS</span>, integrando sistemas y optimizando la comunicación en entornos tecnológicos, apoyado en conocimientos fundamentales de redes de computadoras.
             </p>
           </div>
@@ -301,12 +310,12 @@ function Technologies() {
     <section
       id="tech"
       className="relative w-full px-6 py-24"
-      style={{ background: "linear-gradient(180deg, #0f0f18 0%, #12121a 100%)" }}
+      style={{ background: "linear-gradient(180deg, #f9f9f9 0%, #f0f0f0 100%)" }}
     >
       <div className="max-w-5xl mx-auto">
         <div className="flex flex-col items-start mb-14">
           <p className="text-xs tracking-widest uppercase mb-3" style={{ color: "#e57b00", fontFamily: "'Segoe UI', sans-serif" }}>Herramientas</p>
-          <h2 className="text-4xl font-bold mb-3" style={{ color: "#fff", fontFamily: "'Segoe UI', sans-serif" }}>Tecnologías</h2>
+          <h2 className="text-4xl font-bold mb-3" style={{ color: "#111", fontFamily: "'Segoe UI', sans-serif" }}>Tecnologías</h2>
           <GlowLine />
         </div>
 
@@ -316,19 +325,19 @@ function Technologies() {
               key={tech.name}
               className="rounded-lg p-6 text-center cursor-pointer transition-all duration-400 relative overflow-hidden"
               style={{
-                background: hovered === i ? "rgba(229,123,0,0.1)" : "rgba(229,123,0,0.04)",
-                border: hovered === i ? "1px solid rgba(229,123,0,0.5)" : "1px solid rgba(229,123,0,0.12)",
+                background: hovered === i ? "rgba(229,123,0,0.08)" : "#ffffff",
+                border: hovered === i ? "1px solid rgba(229,123,0,0.5)" : "1px solid rgba(229,123,0,0.2)",
                 transform: hovered === i ? "translateY(-4px)" : "translateY(0)",
-                boxShadow: hovered === i ? "0 8px 30px rgba(229,123,0,0.2)" : "none",
+                boxShadow: hovered === i ? "0 8px 30px rgba(229,123,0,0.15)" : "0 2px 8px rgba(0,0,0,0.06)",
                 transition: "all 0.35s ease",
               }}
               onMouseEnter={() => setHovered(i)}
               onMouseLeave={() => setHovered(null)}
             >
               <div className="text-3xl mb-3">{tech.icon}</div>
-              <p className="text-sm font-semibold mb-3" style={{ color: "#fff", fontFamily: "'Segoe UI', sans-serif" }}>{tech.name}</p>
+              <p className="text-sm font-semibold mb-3" style={{ color: "#222", fontFamily: "'Segoe UI', sans-serif" }}>{tech.name}</p>
               {/* Skill bar */}
-              <div className="w-full h-1 rounded-full" style={{ background: "#1a1a2e" }}>
+              <div className="w-full h-1 rounded-full" style={{ background: "#e8e8e8" }}>
                 <div
                   className="h-full rounded-full transition-all duration-700"
                   style={{
@@ -338,7 +347,7 @@ function Technologies() {
                   }}
                 />
               </div>
-              <p className="text-xs mt-2" style={{ color: "#555" }}>{tech.level}%</p>
+              <p className="text-xs mt-2" style={{ color: "#888" }}>{tech.level}%</p>
             </div>
           ))}
         </div>
@@ -355,12 +364,12 @@ function Projects() {
     <section
       id="projects"
       className="relative w-full px-6 py-24"
-      style={{ background: "linear-gradient(180deg, #12121a 0%, #0f0f18 100%)" }}
+      style={{ background: "linear-gradient(180deg, #ffffff 0%, #f9f9f9 100%)" }}
     >
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col items-start mb-14">
           <p className="text-xs tracking-widest uppercase mb-3" style={{ color: "#e57b00", fontFamily: "'Segoe UI', sans-serif" }}>Desarrollo</p>
-          <h2 className="text-4xl font-bold mb-3" style={{ color: "#fff", fontFamily: "'Segoe UI', sans-serif" }}>Mis Proyectos</h2>
+          <h2 className="text-4xl font-bold mb-3" style={{ color: "#111", fontFamily: "'Segoe UI', sans-serif" }}>Mis Proyectos</h2>
           <GlowLine />
         </div>
 
@@ -369,10 +378,10 @@ function Projects() {
           className="relative rounded-lg overflow-hidden mb-6 cursor-pointer transition-all duration-400"
           style={{
             minHeight: "320px",
-            background: `linear-gradient(135deg, #1a0533, #2d1b4e, #1a0533)`,
-            border: "1px solid rgba(229,123,0,0.2)",
+            background: `linear-gradient(135deg, #fff8f0, #fff3e0, #fff8f0)`,
+            border: "1px solid rgba(229,123,0,0.3)",
             transform: hoveredProject === "featured" ? "scale(1.005)" : "scale(1)",
-            boxShadow: hoveredProject === "featured" ? "0 12px 50px rgba(229,123,0,0.25)" : "0 4px 20px rgba(0,0,0,0.3)",
+            boxShadow: hoveredProject === "featured" ? "0 12px 50px rgba(229,123,0,0.2)" : "0 4px 20px rgba(0,0,0,0.08)",
             transition: "all 0.4s ease",
           }}
           onMouseEnter={() => setHoveredProject("featured")}
@@ -387,8 +396,8 @@ function Projects() {
               <span className="text-xs tracking-widest uppercase px-3 py-1 rounded-sm" style={{ background: "rgba(229,123,0,0.2)", color: "#e57b00" }}>
                 Proyecto Destacado
               </span>
-              <h3 className="text-3xl font-bold mt-4 mb-2" style={{ color: "#fff", fontFamily: "'Segoe UI', sans-serif" }}>{projects[0].title}</h3>
-              <p className="text-sm mb-4" style={{ color: "#888" }}>{projects[0].description}</p>
+              <h3 className="text-3xl font-bold mt-4 mb-2" style={{ color: "#111", fontFamily: "'Segoe UI', sans-serif" }}>{projects[0].title}</h3>
+              <p className="text-sm mb-4" style={{ color: "#555" }}>{projects[0].description}</p>
               <div className="flex gap-2 flex-wrap mb-4">
                 {projects[0].tags.map((tag) => (
                   <span key={tag} className="text-xs px-3 py-1 rounded-sm" style={{ background: "rgba(229,123,0,0.1)", color: "#e57b00", border: "1px solid rgba(229,123,0,0.2)" }}>{tag}</span>
@@ -408,10 +417,10 @@ function Projects() {
               key={project.title}
               className="relative rounded-lg overflow-hidden cursor-pointer transition-all duration-400"
               style={{
-                background: "linear-gradient(135deg, #15151f, #1e1e2e)",
-                border: hoveredProject === i ? "1px solid rgba(229,123,0,0.45)" : "1px solid rgba(229,123,0,0.12)",
+                background: "#ffffff",
+                border: hoveredProject === i ? "1px solid rgba(229,123,0,0.45)" : "1px solid rgba(229,123,0,0.2)",
                 transform: hoveredProject === i ? "translateY(-3px)" : "translateY(0)",
-                boxShadow: hoveredProject === i ? "0 10px 40px rgba(229,123,0,0.2)" : "0 2px 12px rgba(0,0,0,0.25)",
+                boxShadow: hoveredProject === i ? "0 10px 40px rgba(229,123,0,0.15)" : "0 2px 12px rgba(0,0,0,0.07)",
                 transition: "all 0.35s ease",
               }}
               onMouseEnter={() => setHoveredProject(i)}
@@ -435,13 +444,43 @@ function Projects() {
                     Abrir →
                   </div>
                 </div>
-                <h3 className="text-lg font-bold mb-2" style={{ color: "#fff", fontFamily: "'Segoe UI', sans-serif" }}>{project.title}</h3>
-                <p className="text-xs mb-4" style={{ color: "#666", lineHeight: "1.7" }}>{project.description}</p>
-                <div className="flex gap-2 flex-wrap">
+                <h3 className="text-lg font-bold mb-2" style={{ color: "#111", fontFamily: "'Segoe UI', sans-serif" }}>{project.title}</h3>
+                <p className="text-xs mb-4" style={{ color: "#555", lineHeight: "1.7" }}>{project.description}</p>
+                <div className="flex gap-2 flex-wrap mb-3">
                   {project.tags.map((tag) => (
                     <span key={tag} className="text-xs px-2 py-0.5 rounded-sm" style={{ background: "rgba(229,123,0,0.08)", color: "#e57b00", border: "1px solid rgba(229,123,0,0.15)" }}>{tag}</span>
                   ))}
                 </div>
+
+                {/* Credentials block — only shown for projects that have them */}
+                {project.credentials && (
+                  <div
+                    className="mt-3 rounded-md p-3"
+                    style={{
+                      background: "rgba(229,123,0,0.05)",
+                      border: "1px solid rgba(229,123,0,0.2)",
+                    }}
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    <p className="text-xs font-semibold mb-2 tracking-wider uppercase" style={{ color: "#e57b00" }}>
+                      🔐 Credenciales de acceso
+                    </p>
+                    <div className="flex flex-col gap-1">
+                      <div className="flex items-center gap-2">
+                        <span className="text-xs" style={{ color: "#888", minWidth: "70px" }}>Usuario:</span>
+                        <span className="text-xs font-mono px-2 py-0.5 rounded" style={{ background: "rgba(0,0,0,0.05)", color: "#333" }}>
+                          {project.credentials.user}
+                        </span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <span className="text-xs" style={{ color: "#888", minWidth: "70px" }}>Contraseña:</span>
+                        <span className="text-xs font-mono px-2 py-0.5 rounded" style={{ background: "rgba(0,0,0,0.05)", color: "#333" }}>
+                          {project.credentials.password}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
           ))}
@@ -456,13 +495,13 @@ function Footer() {
   return (
     <footer
       className="w-full px-6 py-16 text-center"
-      style={{ background: "linear-gradient(180deg, #0f0f18 0%, #0a0a0f 100%)" }}
+      style={{ background: "linear-gradient(180deg, #f0f0f0 0%, #e8e8e8 100%)" }}
     >
       <div className="max-w-3xl mx-auto">
-        <h3 className="text-2xl font-bold mb-2" style={{ color: "#fff", fontFamily: "'Segoe UI', sans-serif" }}>
+        <h3 className="text-2xl font-bold mb-2" style={{ color: "#111", fontFamily: "'Segoe UI', sans-serif" }}>
           ¿Interesado en colaborar?
         </h3>
-        <p className="text-sm mb-6" style={{ color: "#666" }}>Estoy disponible para proyectos y oportunidades profesionales.</p>
+        <p className="text-sm mb-6" style={{ color: "#555" }}>Estoy disponible para proyectos y oportunidades profesionales.</p>
         <div className="flex justify-center gap-4 flex-wrap">
           <a
             href="mailto:cristianrivas0071@gmail.com"
@@ -472,8 +511,8 @@ function Footer() {
             Contacto
           </a>
         </div>
-        <div className="mt-12 pt-6" style={{ borderTop: "1px solid rgba(229,123,0,0.1)" }}>
-          <p className="text-xs" style={{ color: "#444" }}>© 2025 Portfolio — Desarrollado con React + Vite</p>
+        <div className="mt-12 pt-6" style={{ borderTop: "1px solid rgba(229,123,0,0.2)" }}>
+          <p className="text-xs" style={{ color: "#888" }}>© 2025 Portfolio — Desarrollado con React + Vite</p>
         </div>
       </div>
     </footer>
@@ -483,7 +522,7 @@ function Footer() {
 // Main App
 export default function App() {
   return (
-    <div style={{ background: "#0a0a0f", minHeight: "100vh", overflowX: "hidden" }}>
+    <div style={{ background: "#ffffff", minHeight: "100vh", overflowX: "hidden" }}>
       <style>{`
         @keyframes fadeInUp {
           from { opacity: 0; transform: translateY(30px); }
@@ -491,7 +530,7 @@ export default function App() {
         }
         * { scroll-behavior: smooth; }
         ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-track { background: #0a0a0f; }
+        ::-webkit-scrollbar-track { background: #f5f5f5; }
         ::-webkit-scrollbar-thumb { background: rgba(229,123,0,0.3); border-radius: 3px; }
         ::-webkit-scrollbar-thumb:hover { background: rgba(229,123,0,0.6); }
       `}</style>
